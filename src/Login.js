@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { setUserSession } from './Utils/Common';
+import './sidebar.css'
 
 function Login(props) {
   const [loading, setLoading] = useState(false);
@@ -24,13 +25,12 @@ function Login(props) {
   }
 
   return (
-    <div>
-      Login<br /><br />
-      <div>
+    <div >
+      <div >
         Username<br />
         <input type="text" {...username} autoComplete="new-password" />
       </div>
-      <div style={{ marginTop: 10 }}>
+      <div >
         Password<br />
         <input type="password" {...password} autoComplete="new-password" />
       </div>

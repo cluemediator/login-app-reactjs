@@ -1,55 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
-import axios from 'axios';
-
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
 import Login from './Login';
-import Dashboard from './Dashboard';
-import Home from './Home';
-
-import PrivateRoute from './Utils/PrivateRoute';
-import PublicRoute from './Utils/PublicRoute';
-import { getToken, removeUserSession, setUserSession } from './Utils/Common';
+import './sidebar.css'
+import gen  from './gen.png';
+import Home from './HOME'
+import Log from './buttonlog'
 
 function App() {
-  const [authLoading, setAuthLoading] = useState(true);
-
-  useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      return;
-    }
-
-    axios.get(`http://localhost:4000/verifyToken?token=${token}`).then(response => {
-      setUserSession(response.data.token, response.data.user);
-      setAuthLoading(false);
-    }).catch(error => {
-      removeUserSession();
-      setAuthLoading(false);
-    });
-  }, []);
-
-  if (authLoading && getToken()) {
-    return <div className="content">Checking Authentication...</div>
-  }
-
+  
   return (
-    <div className="App">
+    <div
+    class="bg_image"
+        style={{
+          backgroundImage: 'url('+gen+')',
+          backgroundSize: "cover",
+          height: "100vh",
+        }}>
+    
+    <div >
       <BrowserRouter>
+      
         <div>
-          <div className="header">
-            <NavLink exact activeClassName="active" to="/">Home</NavLink>
-            <NavLink activeClassName="active" to="/login">Login</NavLink><small>(Access without token only)</small>
-            <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small>(Access with token only)</small>
+        <div style={{ display: "flex" }}>
+        <button
+         style={{
+          position: 'absolute',
+          left: 200,
+          top: 40,
+           }}>
+         <a href="/login">login </a>
+          </button>
           </div>
+          
+          <div className="header">
+       
+            <Menu>
+            <a  href="/">Home</a>
+            <a  href="/movie">Movie</a>
+            <a  href="/Actors">Actors</a>
+            <a  href="/Producer">Producer</a>
+            <a href="/Graf connection"> Graph connection </a>
+            </Menu>
+          </div>
+
           <div className="content">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <PublicRoute path="/login" component={Login} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <Route exact  path="/" to={Home} />
+              <Route  path="/login" component={Log} />
+              <Route path="/movie" component={Login} />
+              <Route path="/Actors" component={Login} />
+              <Route path="/Producer" component={Login} />
+              <Route path="/Graf connection" component={Login} />
+
             </Switch>
           </div>
         </div>
+        
       </BrowserRouter>
+    </div>
     </div>
   );
 }

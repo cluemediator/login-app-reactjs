@@ -1,11 +1,15 @@
 import React from 'react';
-
-function Home() {
+import { slide as Menu } from 'react-burger-menu';
+import './sidebar.css'
+import App from './App'
+export default props => {
   return (
+  
+    
     <div>
-      Welcome to the Home Page!
+     <App/>
     </div>
+      
+  
   );
-}
-
-export default Home;
+};
