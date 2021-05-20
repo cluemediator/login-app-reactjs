@@ -9,7 +9,7 @@ import Log from './buttonlog'
 
 function App() {
   
-  return (
+  return ( 
     <div
     class="bg_image"
         style={{
