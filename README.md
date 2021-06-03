@@ -2,7 +2,7 @@
 Example: How to create login form in ReactJS using secure REST API
 
 Please check the below link for step by step tutorial
-**http://www.cluemediator.com/login-app-create-login-form-in-reactjs-using-secure-rest-api-part-3**
+**https://www.cluemediator.com/login-app-create-login-form-in-reactjs-using-secure-rest-api-part-3**
 
 ## Setup
 Follow below steps to run project
@@ -14,7 +14,9 @@ Follow below steps to run project
   
   
 ### Connect with us
-Website: https://www.cluemediator.com  
-Facebook: https://www.facebook.com/thecluemediator  
-Twitter: https://twitter.com/cluemediator  
-Telegram: https://t.me/cluemediator
+Website: [Clue Mediator](https://www.cluemediator.com)  
+Like us on [Facebook](https://www.facebook.com/thecluemediator)  
+Follow us on [Twitter](https://twitter.com/cluemediator)  
+Join us on [Telegram](https://t.me/cluemediator)  
+Subscribe us on [YouTube](https://www.youtube.com/ClueMediator)  
+Follow us on [Instagram](https://www.instagram.com/clue_mediator)
